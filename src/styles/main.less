@@ -1,0 +1,310 @@
+/*
+Author: Marvin Ndlovu
+*/
+
+@bg_clr: #eef;
+@main_txt_clr: #555;
+@blueish: #007;
+@post_bg: #f5efff;
+
+
+
+*
+{
+    font-size: 62.5%;
+}
+
+body
+{
+    min-height: 100vh;
+    width: 100vw;
+}
+
+
+.page
+{
+    display: block;
+    //margin;
+    //justify-content: center;
+    padding: 3em 1em 1em 1em;
+    background-color: @bg_clr;
+    width: 100vw;
+    height: 100%;
+    min-height:100vh;
+}
+
+
+
+.modal
+{
+    display: block;
+    position: fixed;
+    bottom: -5rem;
+    transform: scale(1);
+    transition: all 3s;
+    z-index: 2;
+    height: 85%;
+    width: 97%;
+    overflow: scroll;
+    border-radius: 1rem;
+    box-shadow: 0 0 3px @blueish;
+    border: 2px solid @blueish;
+    background-color: @bg_clr;
+
+
+    .close-modal
+    {
+        width: 100%;
+        background-color: blue;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+        padding-right: 1rem;
+
+        button
+        {
+            display: inline-flex;
+            float: right;
+            height: 2rem;
+            width: 4rem;
+            background-color: red;
+            box-shadow: 0 0 0.5rem 0.2rem red;
+            border-radius: 0.6rem;
+            border: none;
+            color: black;
+            font-size: 1.7rem;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+
+
+.hidden
+{
+    display: none;
+    // width: 100%;
+    // height: 100%;
+     transform: translateY(100px) scale(0) rotateY(180deg);
+    transition: all 2s;
+}
+
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+     width: 100%;
+    max-width: 60rem;
+    min-height: 51rem;
+    color: @blueish;
+    padding: 1rem;
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+    transition: 800ms;
+    opacity: 1;
+
+    button
+    {
+        background-color: @blueish;
+        min-height: 5rem;
+        width: 100%;
+        padding: 1rem;
+        font-size: 2rem;
+        color: @bg_clr;
+        border: 2px solid @main_txt_clr;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+    }
+}
+
+.input
+{
+    height: 4rem;
+    font-size: 2rem;
+    color: @main_txt_clr;
+    margin-bottom: 3rem;    
+    border: 2px solid @main_txt_clr;
+    border-radius: 0.8rem;
+    text-overflow: ellipsis;
+}
+
+#message
+{
+    min-height: 8em;
+    height: auto;
+    
+}
+
+#time-line
+{
+    display: flex;
+    justify-content: center;
+    //margin: 0rem 1em 0em 1em;
+    background-color: @bg_clr;
+    width: 100%;
+    height: auto;
+    min-height:100vh;
+}
+
+
+.container
+{
+    margin-top: 6rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+
+
+
+.post-container
+{
+    width: 100%;
+    background-color: @post_bg;
+    padding: 0.8rem;
+    margin-bottom: 3rem;
+    border: 1px solid @blueish;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px black;
+
+    &:hover
+    {
+        transform: translate(-2px, -2px);
+        box-shadow: 2px 2px 3px black;
+    }
+
+    h2
+    {
+        color: @blueish;
+        font-size: 1.55rem;
+    }
+
+    p
+    {
+        color: @main_txt_clr;
+        font-size: 1.2rem;
+        text-align: justify;
+    }
+
+    span
+    {
+        width: 100%;
+        color: black;
+        display: inline-flex;
+        justify-content: flex-end;
+        font-size: 0.8rem;
+    }
+}
+
+#bar
+{
+    background-color: @bg_clr; 
+    width: 100vw;
+    height: 7rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: inline-flex;
+    justify-content: space-evenly;
+    padding-top: 1%;
+
+    .counters
+    {
+        display: grid;
+        place-items: center;
+        opacity: 0.3;
+        font-size: 1.3rem;
+
+        &:hover
+        {
+            opacity: 0.5;
+            transition: all 0.5s;
+        }
+
+        img
+        {
+            height: 100%;
+            margin-bottom: -1rem;
+        }
+    }  
+}
+
+
+.floating-button
+{
+    position: fixed;
+    background-color: @blueish;
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid @main_txt_clr;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-button
+{
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 4rem;
+    color: @main_txt_clr;
+    opacity: 0.8;
+}
+
+#search-button
+{
+    bottom: 8rem;
+    right: 2rem;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+
+    img
+    {
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+    }
+}
+
+
+@media screen and (min-width: 720px)
+{
+    .floating-button
+    {
+        display: none;
+    }
+
+    .posts
+    {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+
+
+        #form
+        {
+            position: fixed;
+            right: 55%;
+            width: 40vw;
+        }
+
+        #list-of-posts
+        {   
+            position: relative;
+            left: 23%;
+            max-height: 80vh;
+            width: 47vw;
+            scroll-behavior: smooth;
+        }
+
+    }   
+}
